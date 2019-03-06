@@ -12,10 +12,10 @@ class Todo extends Component {
   render() {
     return (
       <ul>
-      {this.props.todo.map(todos => {
+      {this.props.todoList.map(todo => {
         return (
-          <li key={Date.now()} onClick={this.todoToggle}>
-          {todos.text}
+          <li key={todo.id} onClick={this.todoToggle}>
+          {todo.text}
           </li>
         )
       })}
@@ -25,7 +25,7 @@ class Todo extends Component {
 }
 
 const mapStateToProps = state => ({
-  todo: state.todos
+  todoList: state.todos
 })
 
 export default connect(mapStateToProps, {todoToggle})(Todo);

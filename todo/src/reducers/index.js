@@ -22,11 +22,11 @@ export default (state = stateInitial, action) => {
       }
       return {
         ...state,
-        todos: [...this.state.todos, addTodo]
+        todos: [...state.todos, addTodo]
       }
-      
+
     case TODO_TOGGLE:
-      this.state.todos.forEach(todo => {
+      state.todos.forEach(todo => {
         if(todo.id === action.payload) {
           todo.completed = !todo.completed
         }

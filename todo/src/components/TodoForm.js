@@ -10,7 +10,7 @@ class TodoForm extends Component {
   addTodos = event => {
     event.preventDefault()
 
-    this.props.addTodos(this.state.todos)
+    this.props.todoAdd(this.state.todos)
     this.setState({
       todos: ''
     })
